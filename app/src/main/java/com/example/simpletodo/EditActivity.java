@@ -22,5 +22,9 @@ public class EditActivity extends AppCompatActivity {
         btnSave = findViewById(R.id.btnSave);
 
         getSupportActionBar().setTitle("Edit item");
+
+        //prepopulate clicked item
+        etItem.setText(getIntent().getStringExtra(MainActivity.KEY_ITEM_TEXT));
+
     }
 }
