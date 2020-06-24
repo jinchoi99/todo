@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,6 +21,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static final String KEY_ITEM_TEXT = "item_text";
+    public static final String KEY_ITEM_POSITION = "item_position";
+    public static final int EDIT_TEXT_CODE = 20;
 
     //implement model as List of String called items
     List<String> items;
@@ -68,8 +73,30 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
+        ItemsAdapter.OnClickListener onClickListener = new ItemsAdapter.OnClickListener() {
+            @Override
+            public void onItemClicked(int position) {
+                //Check if  single click works
+                Log.d("MainActivity", "single click at position "+position);
+
+                //open up edit activity:
+                //create the new activity (activity = screen)
+                //intent = can think of it as request to android system
+                //intent/request here is to open up another activity
+                Intent i = new Intent(MainActivity.this, EditActivity.class); //MainActivity.this vs EditActivity.class => .this is an instance, .class is class
+
+                //pass the data being edited
+                i.putExtra(KEY_ITEM_TEXT, items.get(position));
+                i.putExtra(KEY_ITEM_POSITION, position);
+
+                //display the activity
+                startActivityForResult(i, EDIT_TEXT_CODE);
+
+            }
+        };
+
         //construct ItemsAdapter
-        itemsAdapter = new ItemsAdapter(items, OnLongClickListener);
+        itemsAdapter = new ItemsAdapter(items, OnLongClickListener, onClickListener);
 
         //set the adapter on the rv
         rvItems.setAdapter(itemsAdapter);
