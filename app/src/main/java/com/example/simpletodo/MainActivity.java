@@ -1,6 +1,7 @@
 package com.example.simpletodo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -16,9 +17,12 @@ public class MainActivity extends AppCompatActivity {
     List<String> items;
 
     //Add a member variable from each view
+    //get reference of each view in mainActivity
+    //get handle of the btnAdd, etItem, rvItems in mainActivity
     Button btnAdd;
     EditText etItem;
     RecyclerView rvItems;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +42,11 @@ public class MainActivity extends AppCompatActivity {
         items.add("Do laundry");
         items.add("Do homework");
 
-        //get reference of each view in mainActivity
-        //get handle of the btnAdd, etItem, rvItems in mainActivity
+        //construct ItemsAdapter
+        ItemsAdapter itemsAdapter = new ItemsAdapter(items);
+        //set the adapter on the rv
+        rvItems.setAdapter(itemsAdapter);
+        //default layoutmanager that puts list in vertical manner
+        rvItems.setLayoutManager(new LinearLayoutManager(this));
     }
 }
