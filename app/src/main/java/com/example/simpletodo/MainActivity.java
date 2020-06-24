@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     //implement model as List of String called items
     List<String> items;
 
-    //Add member variable of each view
+    //Add a member variable from each view
     Button btnAdd;
     EditText etItem;
     RecyclerView rvItems;
@@ -24,6 +24,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //define each member variable
+        btnAdd = findViewById(R.id.btnAdd);
+        etItem = findViewById(R.id.etItem);
+        rvItems = findViewById(R.id.rvItems);
 
         //create mock data
         items = new ArrayList<>();
