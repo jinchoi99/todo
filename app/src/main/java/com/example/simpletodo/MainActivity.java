@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -43,10 +44,26 @@ public class MainActivity extends AppCompatActivity {
         items.add("Do homework");
 
         //construct ItemsAdapter
-        ItemsAdapter itemsAdapter = new ItemsAdapter(items);
+        final ItemsAdapter itemsAdapter = new ItemsAdapter(items);
         //set the adapter on the rv
         rvItems.setAdapter(itemsAdapter);
         //default layoutmanager that puts list in vertical manner
         rvItems.setLayoutManager(new LinearLayoutManager(this));
+
+
+        //get notified every time user taps on the button
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 //get text from etItem --> todoItem
+                 String todoItem = etItem.getText().toString();
+                 //Add item to the model
+                 items.add(todoItem);
+                 //Notify adapter that an item has been added
+                 itemsAdapter.notifyItemInserted(items.size()-1);
+                 //clear the edit text after insertion
+                 etItem.setText("");
+             }
+        });
     }
 }
