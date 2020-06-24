@@ -40,9 +40,9 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder>{
     }
 
     @Override
-    //number of items available in the data
+    //Tells the RV how many items are in the list
     public int getItemCount() {
-        return 0;
+        return items.size();
     }
 
     //Container to provide easy access to views that represent each row of the list
