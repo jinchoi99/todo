@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         btnAdd = findViewById(R.id.btnAdd);
         etItem = findViewById(R.id.etItem);
         rvItems = findViewById(R.id.rvItems);
+        //each view has diff method
+        //e.g. etItem.setText("I'm doing this from java!");
 
         //create mock data
         items = new ArrayList<>();
