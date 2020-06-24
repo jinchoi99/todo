@@ -44,11 +44,18 @@ public class MainActivity extends AppCompatActivity {
         items.add("Do laundry");
         items.add("Do homework");
 
+        new ItemsAdapter.OnLongClickListener(){
+
+        }
+
         //construct ItemsAdapter
         final ItemsAdapter itemsAdapter = new ItemsAdapter(items);
+
         //set the adapter on the rv
         rvItems.setAdapter(itemsAdapter);
+
         //default layoutmanager that puts list in vertical manner
+        //actually display the items in list form on screen
         rvItems.setLayoutManager(new LinearLayoutManager(this));
 
 
