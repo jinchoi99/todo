@@ -124,12 +124,6 @@ public class MainActivity extends AppCompatActivity {
                  //Add Toast message to notify user that item has been added successfully
                  Toast.makeText(getApplicationContext(), "Item was added successfully", Toast.LENGTH_SHORT).show();
 
-                 //change toast position
-                 /*
-                 Toast toast = Toast.makeText(getApplicationContext(),"hello", Toast.LENGTH_SHORT);
-                 toast.setGravity(Gravity.CENTER_VERTICAL | Gravity.START, 90, 0);
-                 toast.show();*/
-
                  saveItems();
              }
         });
