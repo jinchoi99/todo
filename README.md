@@ -4,14 +4,14 @@
 
 Submitted by: **Jinny Choi**
 
-Time spent: **4.5** hours spent in total
+Time spent: **5** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
 * [x] User can **view a list of todo items**
-* [ ] User can **successfully add and remove items** from the todo list
+* [x] User can **successfully add and remove items** from the todo list
 * [x] User's **list of items persisted** upon modification and and retrieved properly on app restart
 
 The following **stretch** features are implemented:
@@ -26,13 +26,14 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
+GIF created with [Kap](https://getkap.co/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Through this project, I learned the important concepts in mobile app development, such as the MVC paradigm and the basic functions of CRUD, and was amazed by how powerful Java and Android Studio IDE could be in building real-life applications. I also learned to make it a habit to use git, which really helped me understand each step of my development more clearly. 
+The most challenging part about the SimpleTodo project was understanding the concept of how the RecyclerView.Adapter and ViewHolder work, but after going through the Youtube tutorial and the CodePath reading materials more thoroughly, I feel like I've gained a better understanding of their functionalities. I also learned that taking frequent, detailed comments is very important in order to keep track of numerous variables and methods throughout my code.
 
 ## License
 
