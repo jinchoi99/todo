@@ -45,11 +45,14 @@ public class MainActivity extends AppCompatActivity {
         //each view has diff method
         //e.g. etItem.setText("I'm doing this from java!");
 
-        //create mock data
+        /*//create mock data
         items = new ArrayList<>();
         items.add("Buy milk");
         items.add("Do laundry");
-        items.add("Do homework");
+        items.add("Do homework");*/
+
+        //Call loadItems at the start
+        loadItems();
 
         ItemsAdapter.OnLongClickListener OnLongClickListener = new ItemsAdapter.OnLongClickListener(){
             @Override
@@ -61,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
                 //Add Toast message to notify user that item has been removed successfully
                 Toast.makeText(getApplicationContext(), "Item was removed successfully", Toast.LENGTH_SHORT).show();
+                saveItems();
             }
         };
 
@@ -90,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
                  //Add Toast message to notify user that item has been added successfully
                  Toast.makeText(getApplicationContext(), "Item was added successfully", Toast.LENGTH_SHORT).show();
+                 saveItems();
              }
         });
     }
@@ -107,8 +112,7 @@ public class MainActivity extends AppCompatActivity {
             Log.e("MainActivity", "Error reading items", e);
             items = new ArrayList<>();
         }
-
-    }
+    }//call in the beginning of app start
 
     //This function saves items by writing them into the data file
     private void saveItems(){
@@ -117,5 +121,5 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException e) {
             Log.e("MainActivity", "Error writing items", e);
         }
-    }
+    }//call whenever add or remove item
 }
